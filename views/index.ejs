@@ -1,0 +1,40 @@
+<%- include('partials/header'); %>
+    <div class="container-split">
+        <img src="/images/oak.png" />
+
+        <div class="framed">
+            Hello there! Welcome to the world of POKEMON!
+            My name is OAK! People call me the POKEMON PROF! This world is inhabited by creatures called POKEMON! For
+            some people, POKEMON are pets. Others use them for fights. Myself...I study POKEMON as a profession.
+            <br /><br />First, what is your name?<br />
+            <br />
+
+            <div class="players">
+                <% for (let player of players) { %>
+                    <p>
+                        <%= player.name %>
+                    </p>
+                    <% } %>
+            </div>
+            <div>
+                <form action="/login" method="POST">
+                    <p>Login here:</p>
+                    <input class="white" type="text" name="username" value="username" />
+                    <input type="password" name="password">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <form action="/createPlayer" method="POST">
+                <p>Are you new?
+                    Create an account!</p>
+                <input class="white" type="text" name="name" value="RED" />
+                <input type="password" name="password" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+    </div>
+
+    <%- include('partials/footer'); %>
